@@ -18,6 +18,14 @@ Pod::Spec.new do |s|
   s.subspec 'Diffing' do |ds|
     ds.source_files = 'Source/Common/**/*.{h,m,mm}'
     ds.private_header_files = 'Source/Common/Internal/*.h'
+    
+    ds.watchos.deployment_target = '2.0'
+	ds.watchos.frameworks = 'Foundation'
+    ds.watchos.source_files = 'Source/Common/watchOS/*.{h,m,mm}'
+    ds.watchos.private_header_files = ['Source/Common/watchOS/*.h']
+
+	ds.ios.deployment_target = '8.0'
+	ds.ios.frameworks = 'UIKit'
   end
 
   s.subspec 'Default' do |cs|
